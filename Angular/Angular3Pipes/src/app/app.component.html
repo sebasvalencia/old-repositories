@@ -1,0 +1,224 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td> uppercase </td>
+        <td>{{nombre | uppercase}}</td>
+        <!--SEBASTIAN -->
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td> lowercase </td>
+        <td>{{nombre | lowercase}}</td>
+        <!--sebastian -->
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td> slice:3 </td>
+        <td>{{nombre | slice:3}}</td>
+        <!--astian -->
+      </tr>
+
+      <tr>
+        <td>{{ nombre }}</td>
+        <td> slice:0:3 </td>
+        <td>{{nombre | slice:0:3 }}</td>
+        <!--Seb -->
+      </tr>
+
+      <tr>
+        <td>{{ arreglo }}</td>
+        <td> slice:1:5 </td>
+        <td>{{arreglo | slice:1:5 }}</td>
+        <!--2,3,4,5 -->
+      </tr>
+
+      <tr>
+        <td>{{ PI }}</td>
+        <td> number </td>
+        <td>{{PI | number }}</td>
+        <!--3.142 -->
+      </tr>
+
+      <tr>
+        <td>{{ PI }}</td>
+        <td> number:'3.0-0' </td>
+        <td>{{PI | number:'3.0-0' }}</td>
+        <!--003 -->
+      </tr>
+
+      <tr>
+        <td>{{ PI }}</td>
+        <td> number:'1.0-2' </td>
+        <td>{{PI | number:'1.0-2' }}</td>
+        <!--3.14 -->
+      </tr>
+
+      <tr>
+        <td>{{ a }}</td>
+        <td> percent </td>
+        <td>{{a | percent }}</td>
+        <!--23% -->
+      </tr>
+
+      <tr>
+        <td>{{ a }}</td>
+        <td> percent:'2.2-2' </td>
+        <td>{{a | percent:'2.2-2' }}</td>
+        <!--23.40% -->
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td> currency </td>
+        <td>{{salario | currency }}</td>
+        <!--$1,234.50 -->
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td> currency:'COU' </td>
+        <td>{{salario | currency:'COU' }}</td>
+        <!--COU1,234.50 -->
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td> currency:'EUR' </td>
+        <td>{{salario | currency:'EUR' }}</td>
+        <!--€1,234.50 -->
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td> currency:'EUR':true </td>
+        <td>{{salario | currency:'EUR':true }}</td>
+        <!--€1,234.50 -->
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td> currency:'EUR':true:'4.0-0' </td>
+        <td>{{salario | currency:'EUR':true:'4.0-0' }}</td>
+        <!--€1,235 -->
+      </tr>
+
+      <tr>
+        <td>{{ salario }}</td>
+        <td> number:'.2-2' </td>
+        <td>{{salario | number:'.2-2' }}</td>
+        <!--	1,234.50 -->
+      </tr>
+
+      <!--
+      <tr>
+        <td>{{ valorDePromesa }}</td>
+        <td> asyc </td>
+        <td>{{valorDePromesa  }}</td>
+        <!--	[object Promise] -->
+      <!--</tr>-->
+
+      <!--<tr>
+        <td>{{ valorDePromesa | json }}</td>
+        <td> asyc </td>
+        <td>{{valorDePromesa | json }}</td>
+        <!--		{ "__zone_symbol__state": null, "__zone_symbol__value": [] }-->
+      <!--</tr>-->
+
+      <tr>
+        <td>{{ valorDePromesa | async }}</td>
+        <td> asyc </td>
+        <td>{{valorDePromesa | async }}</td>
+        <!--		{ "__zone_symbol__state": null, "__zone_symbol__value": [] }-->
+      </tr>
+
+      <tr>
+        <td>{{ fecha }}</td>
+        <td> date </td>
+        <td>{{fecha  }}</td>
+        <!--	Sat Jan 13 2018 18:27:24 GMT-0500 (Hora est. Pacífico, Sudamérica)-->
+      </tr>
+
+      <tr>
+        <td>{{ fecha }}</td>
+        <td> date:'medium' </td>
+        <td>{{fecha | date:'medium' }}</td>
+        <!--Jan 13, 2018, 6:28:24 PM-->
+      </tr>
+
+      <tr>
+        <td>{{ fecha }}</td>
+        <td> date:'MMMM - dd' </td>
+        <td>{{fecha | date:'MMMM - dd' }}</td>
+        <!--January - 13-->
+      </tr>
+
+      <tr>
+        <td>{{ nombre2 }}</td>
+        <td> capitalizado </td>
+        <td>{{nombre2 | capitalizado }}</td>
+        <!--January - 13-->
+      </tr>
+
+      <tr>
+        <td>{{ nombre2 }}</td>
+        <td> capitalizado </td>
+        <td>{{nombre2 | capitalizado }}</td>
+        <!--Sebastian Valencia-->
+      </tr>
+
+      <tr>
+        <td>{{ nombre2 }}</td>
+        <td> capitalizado </td>
+        <td>{{nombre2 | capitalizado:false }}</td>
+        <!--Sebastian valencia-->
+      </tr>
+
+
+
+
+
+    </tbody>
+  </table>
+
+
+  <h4>Slice</h4>
+
+  <ul>
+    <li *ngFor="let item of arreglo | slice:5:20">{{ item }}</li>
+  </ul>
+
+
+  <h4>JSON</h4>
+  {{ heroe }}<!--	[object Object]  -->
+<br><br><br>
+  {{ heroe | json}}<!--	{ "nombre": "Logan", "clave": "Wolverine", "edad": 500, "direccion": { "calle": "primera", "casa": "19" } } -->
+
+  <pre>{{heroe | json}}</pre>
+  <!--{
+    "nombre": "Logan",
+    "clave": "Wolverine",
+    "edad": 500,
+    "direccion": {
+      "calle": "primera",
+      "casa": "19"
+    }
+  }-->
+
+
+</div>

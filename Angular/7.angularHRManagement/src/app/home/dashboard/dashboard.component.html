@@ -1,0 +1,25 @@
+<mat-toolbar class="container" color="primary">
+  <mat-toolbar-row>
+    <span>Welcome to HR Management - {{title}}</span>
+    <span class="toolbar-spacer"></span>
+    <span>Logout</span>
+    <a [routerLink]="[ '/logout']"><mat-icon class="logout-icon">logout</mat-icon></a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-card fxLayoutAlign="center" class="card-dashboard" [routerLink]="['./employee']">
+        <img mat-card-image
+        src="/assets/img_avatar.png" alt="">
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+      <mat-card fxLayoutAlign="center" class="card-dashboard" [routerLink]="['./project']">
+        <img mat-card-image
+        src="/assets/folder.jpg" alt="">
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>

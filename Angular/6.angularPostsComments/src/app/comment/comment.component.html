@@ -1,0 +1,21 @@
+ 
+ <div class="comment" *ngIf="isComment">
+  <mat-toolbar>Posts</mat-toolbar>
+  <h4 class="title">{{post$.title}}</h4>
+  <h3>{{post$.body}}</h3>
+  <mat-toolbar>Comments</mat-toolbar>
+  <mat-list *ngIf="(comments$ | async) as comments">
+    <mat-card class="card"
+      *ngFor="let comment of comments">
+        <mat-card-header>
+          <mat-card-title>{{comment.name | json}}</mat-card-title>
+          <mat-card-subtitle>Author: {{comment.email | json}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+              {{comment.body | json}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+  </mat-list>
+</div> 

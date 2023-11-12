@@ -1,0 +1,18 @@
+.progress-circle {
+  transition: stroke-dashoffset 0.3s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.data {
+  font-family: 'Lato';
+  color: #0B4FA1;
+  font-size: 30px;
+  text-anchor: middle;
+}
+
+.text {
+  font-family: 'Lato';
+  color: #0B4FA1;
+  font-size: 30px;
+}

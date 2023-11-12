@@ -1,0 +1,18 @@
+
+<h1>FORMS</h1>
+
+<form (ngSubmit)="onSubmit($event)" [formGroup]="form">
+  <input type="text" name="username">
+  <input type="text" name="password">
+  <input type="number" formControlName="age">
+  <span class="danger" *ngIf="!form.get('age').pristine && !form.get('age').valid">This field is 5 max</span>
+  <!-- <button type="submit" [disabled]="!form.disabled">SAVE</button> -->
+  <button type="submit" [disabled]="!form.valid" >SAVE</button>
+</form>
+
+
+<!-- <pre>{{ form.get('username')?.errors?.forbiddenName?error }}</pre> -->
+
+<pre>{{ form.value | json }}</pre>
+
+

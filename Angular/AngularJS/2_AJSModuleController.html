@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>Prueba 1 AJS - Module y Controller</title>
+</head>
+<body>
+    <div ng-app="miApp" ng-controller="miCtrl">
+        Nombre: <input type="text" ng-model="nombre"><br>
+        Apellido: <input type="text" ng-model="apellido"><br>
+        Nombre Completo: {{nombre + " " + apellido}}
+    </div>
+    <script>
+        //Define la aplicacion
+        var app = angular.module('miApp',[]);
+        
+        //Control aplicacion
+        app.controller('miCtrl', function($scope){
+            $scope.nombre='Jhon';
+            $scope.apellido="Doe";
+        });
+    </script>
+</body>
+</html>

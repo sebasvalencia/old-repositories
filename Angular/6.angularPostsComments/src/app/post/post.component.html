@@ -1,0 +1,14 @@
+<div class="post">
+  <mat-toolbar>Posts</mat-toolbar>
+  <mat-list  *ngIf="(posts$ | async) as post">
+    <mat-list-item 
+        style="cursor: pointer;"
+        *ngFor="let postInfo of post" 
+        (click)="onGetIdPost(postInfo)">{{postInfo.title | json}}
+    </mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
+</div>
+
+<app-comment></app-comment>
+ 

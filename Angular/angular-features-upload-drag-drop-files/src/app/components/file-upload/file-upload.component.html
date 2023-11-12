@@ -1,0 +1,21 @@
+<div class="container" appDragNdropFile (fileDropped)="onFileDropped($event)">
+  <input type="file" #fileDragDropRef id="fileDragDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+
+  <p class="text1">Hi there!</p>
+  <img class="uploadIcon" src="../../assets/img/uploadicon.svg" alt="">
+  <p class="text2">To upload a file, you can <span class="text1">drag and drop</span> it here</p>
+  <p class="text1">Or</p>
+  <p for="fileDragDropRef" class="divlupa">
+    <img class="lupa" src="../../assets/img/lupa.svg" alt="">
+  </p>
+</div>
+
+
+<div [style.display]="!showSpinner ? 'block' : 'none'" class="overlay">
+  <div *ngFor="let file of files; let i = index ">
+    <div class="text">
+      <app-spinner [value]="fileProgress"></app-spinner>
+    </div>
+    <span class="textSpinner">Loading file… Just a few seconds</span>
+  </div>
+</div>

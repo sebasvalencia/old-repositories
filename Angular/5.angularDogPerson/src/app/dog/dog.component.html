@@ -1,0 +1,4 @@
+
+<h2>Dog Photo</h2>
+<img *ngIf="(dog$ | async) as dogPhoto"
+      [src]="dogPhoto.message" width="50px">
