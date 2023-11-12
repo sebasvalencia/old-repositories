@@ -1,0 +1,46 @@
+<div class="container" ng-controller="listLiabilitiesCtrl" ng-init="init()">
+
+    <form name="formLiabilities" class="" novalidate="">
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <h2 class="titleLiabilities">Liabilities</h2>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 put-right-btn-add">
+                <button class="btn btn-success btn-circle-add pull-right glyphicon glyphicon-plus" ng-click="redirectAddFormLiabilities()"></button>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="table-responsive size-table">
+                <table class=" table table-striped">
+                    <tr>
+                        <th class="th">Name</th>
+                        <th class="th">Bank</th>
+                        <th class="th">Investment value</th>
+                        <th class="th">Acquisition date</th>
+                        <th class="th">Expiration date</th>
+                        <th class="th">Monthly payment</th>
+                        <th class="th">Interests</th>
+                        <th class="th">Delete</th>
+                        <th class="th">Edit</th>
+                    </tr>
+
+                    <tr ng-repeat="liabilitiesItem in liabilitiesListData">
+                        <td>{{liabilitiesItem.name}}</td>
+                        <td>{{liabilitiesItem.bank}}</td>
+                        <td>{{liabilitiesItem.value}}</td>
+                        <td>{{liabilitiesItem.acquisitionDate}}</td>
+                        <td>{{liabilitiesItem.expirationDate}}</td>
+                        <td>{{liabilitiesItem.monthlyPayment}}</td>
+                        <td>{{liabilitiesItem.interests}}</td>
+                        <td><button class="btn btn-danger btn-circle glyphicon glyphicon-remove" ng-click="deleteLiabilities(liabilitiesItem)"></button></td>
+                        <td><button class="btn btn-primary btn-circle glyphicon glyphicon-edit" ng-click="editLiabilities(liabilitiesItem)"></button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

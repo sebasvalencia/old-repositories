@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Ejemplo de axios</title>
+</head>
+<script>
+
+    function postTelefono(){
+        axios.post('/telefonos/insert',{
+            data:{
+                nombre:'samsumg',
+                precio:'400'
+            }
+        }).then(function(response){
+            console.log("funciono");
+        }).catch(function(err){
+            console.log("no se pudo insertar");
+        })
+
+    }
+
+    function getTelefono() {
+       axios.get('/telefonos/telefono',{
+            params: {
+                nombre: 'iphone'
+            }
+        })
+       .then(function(response){
+           let {nombre, precio} = response.data[0];
+           console.log(`El telefono ${nombre} cuesta ${precio}`);
+            console.log(response.data[0]);
+       })
+       .catch(function(err){
+            console.log("errr");
+       })
+    }
+
+    function getTelefonos(){
+        axios.get('/telefonos')
+        .then(function(response){
+            response.data.forEach(function(elemento){                
+                console.log(`Nombre del telefono: ${elemento.nombre}, precio: ${elemento.precio}`);
+            });
+        })
+        .catch(function(err){
+            console.log(`Error listando: ${err}`);
+        })
+    }
+
+    function actualizarTelefono(){
+        axios.put('telefonos/iphone',{
+            nombre:"iphone",
+            precio:100
+        }).then(function(response){
+            console.log(`Se actualizo el elemento ${response.data}`);
+        })
+        .catch(function(err){
+            console.log(`Error actualizando: ${err}`);
+        })
+    }
+</script>
+<body>
+    <input type="button" value="Listar" onclick="getTelefonos()"/>
+    <input type="button" value="Actualizar" onclick="actualizarTelefono()"/>
+    <input type="button" value="Listar un telefono" onclick="getTelefono()"/>
+    <input type="button" value="Insertar" onclick="postTelefono()"/>
+</body>
+</html>

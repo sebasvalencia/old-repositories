@@ -1,0 +1,57 @@
+<div class="container" ng-controller="formLiabilitiesCtrl" ng-init="init()">
+
+
+    <form name="formLiabilities" class="" novalidate="">
+
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <h3>Liabilities</h3>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-4 form-group">
+                <label for="name" class=" control-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" ng-model="liabilities.name" required>
+            </div>
+            <div class=" col-sm-4 form-group">
+                <label for="bank" class=" control-label">Bank /stockbroker</label>
+                <input type="text" class="form-control" id="bank" name="bank" ng-model="liabilities.bank">
+            </div>
+            <div class=" col-sm-4 form-group">
+                <label for="investmentValue" class=" control-label">Investment value</label>
+                <input type="text" class="form-control" id="investmentValue" name="investmentValue" ng-model="liabilities.investmentValue">
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-sm-4 form-group">
+                <label for="acquisitionDate" class="control-label">Acquisition date</label>
+                <input type="text" class="form-control" id="acquisitionDate" name="acquisitionDate" ng-model="liabilities.acquisitionDate">
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="expirationDate" class="control-label">Expiration date</label>
+                <input type="text" class="form-control" id="expirationDate" name="expirationDate" ng-model="liabilities.expirationDate">
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="monthlyPayment" class="control-label">Monthly payment</label>
+                <input type="text" class="form-control" id="monthlyPayment" name="monthlyPayment" ng-model="liabilities.monthlyPayment">
+            </div>
+
+        </div>
+
+        <div class="row row-content">
+            <div class="col-sm-4 form-group">
+                <label for="rate" class="control-label">Interests</label>
+                <input type="text" class="form-control" id="rate" name="rate" ng-model="liabilities.interests">
+            </div>
+            
+        </div>
+
+        <div class="form-group button-control-contactus">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button ng-click="saveLiabilities(liabilities)" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

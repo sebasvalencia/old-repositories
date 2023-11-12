@@ -1,0 +1,25 @@
+<div class="row" ng-controller="cardCtrl" ng-init="init()">
+
+  <div class="col-sm-6">
+    <div class="card card-block" style="background-color: #f3f3e3;">
+      <h3 class="card-title titleAsset">Assents</h3>
+      <p class="card-text">
+        <p ng-repeat="assetItem in assetListData">
+          <strong>{{assetItem.name}}:</strong> <br> {{assetItem.investmentValue}}
+        </p>
+      </p>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card card-block " style="background-color: #f3f3e3;">
+      <h3 class="card-title titleLiabilities">Liabilities</h3>
+      <p class="card-text">
+        <p ng-repeat="liabilitiesItem in liabilitiesListData">
+          <strong>{{liabilitiesItem.name}}:</strong> <br> {{liabilitiesItem.value}}
+        </p>
+      </p>
+    </div>
+  </div>
+
+</div>

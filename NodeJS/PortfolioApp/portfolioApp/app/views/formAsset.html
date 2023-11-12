@@ -1,0 +1,65 @@
+<div class="container" ng-controller="formAssetCtrl" ng-init="init()">
+
+
+    <form name="formAssets" class="" novalidate="">
+
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <h3>Asset</h3>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-4 form-group">
+                <label for="name" class=" control-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" ng-model="asset.name" required>
+            </div>
+            <div class=" col-sm-4 form-group">
+                <label for="bank" class=" control-label">Bank /stockbroker</label>
+                <input type="text" class="form-control" id="bank" name="bank" ng-model="asset.bank">
+            </div>
+            <div class=" col-sm-4 form-group">
+                <label for="investmentValue" class=" control-label">Investment value</label>
+                <input type="text" class="form-control" id="investmentValue" name="investmentValue" ng-model="asset.investmentValue">
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-sm-4 form-group">
+                <label for="acquisitionDate" class="control-label">Acquisition date</label>
+                <input type="text" class="form-control" id="acquisitionDate" name="acquisitionDate" ng-model="asset.acquisitionDate">
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="expirationDate" class="control-label">Expiration date</label>
+                <input type="text" class="form-control" id="expirationDate" name="expirationDate" ng-model="asset.expirationDate">
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="monthlyPayment" class="control-label">Monthly payment</label>
+                <input type="text" class="form-control" id="monthlyPayment" name="monthlyPayment" ng-model="asset.monthlyPayment">
+            </div>
+
+        </div>
+
+        <div class="row row-content">
+            <div class="col-sm-4 form-group">
+                <label for="rate" class="control-label">Rate</label>
+                <input type="text" class="form-control" id="rate" name="rate" ng-model="asset.rate">
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="valueShare" class="control-label">Value per share</label>
+                <input type="text" class="form-control" id="valueShare" name="valueShare" ng-model="asset.valueShare">
+            </div>
+            <div class="col-sm-4 form-group">
+                <label for="numberShare" class="control-label">Number of shares</label>
+                <input type="text" class="form-control" id="numberShare" name="numberShare" ng-model="asset.numberShare">
+            </div>
+
+        </div>
+
+        <div class="form-group button-control-contactus">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button ng-click="saveAsset(asset)" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,91 @@
+.body{
+  background-color: #e8e8e7;
+}
+
+.title{
+  color: #e63e11;
+}
+
+.sub-title{
+  margin-top:30px !important;
+  color: #ef7f3f;
+}
+
+.navbar-brand{
+  color: #e63e11 !important;
+}
+
+.titleAsset{
+  color: #5fb677;  
+}
+
+.titleLiabilities{
+  color: #e42d40;  
+}
+
+.form-control-contactus{
+  width: 70% !important;
+}
+
+.button-control-contactus{
+  margin-left: 127px !important;
+}
+
+.size-table{
+  /*width: 820px;*/
+}
+
+.btn-circle-add {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+/*.put-right-btn-add{
+  width: 820px;
+}*/
+
+.title-footer{
+  font-weight: bold;
+}
+
+.border-top-footer{
+  border-top: 1px solid #ffffff;
+}
+
+.navbar{
+  margin-bottom: 0px;
+}
+
+.navbar-default{
+  border-color: #f8f8f8;
+}
+
+.th{
+  color: #958e4a !important;
+  background-color: #ece9cb !important;
+}
+
+.btn-success {
+    background-color: #5fb677;
+    border-color: #5fb677;
+}
+
+.header{
+      border-bottom: 1px solid #ffffff !important;
+      margin-bottom: 0px;
+}
+

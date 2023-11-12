@@ -1,0 +1,79 @@
+<div class="container" ng-controller="listComparisonCtrl" ng-init="init()">
+
+    <form name="formAssets" class="" novalidate="">
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <h2 class="titleAsset">Assents</h2>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="table-responsive size-table">
+                <table class=" table table-striped">
+                    <tr>
+                        <th class="th">Name</th>
+                        <th class="th">Bank</th>
+                        <th class="th">Investment value</th>
+                        <th class="th">Acquisition date</th>
+                        <th class="th">Expiration date</th>
+                        <th class="th">Rate</th>
+                        <th class="th">Monthly payment</th>
+                        <th class="th">Num of shares</th>
+                        <th class="th">Val per share</th>
+                    </tr>
+
+                    <tr ng-repeat="assetItem in assetListData">
+                        <td>{{assetItem.name}}</td>
+                        <td>{{assetItem.bank}}</td>
+                        <td>{{assetItem.investmentValue}}</td>
+                        <td>{{assetItem.acquisitionDate}}</td>
+                        <td>{{assetItem.expirationDate}}</td>
+                        <td>{{assetItem.monthlyPayment}}</td>
+                        <td>{{assetItem.rate}}</td>
+                        <td>{{assetItem.valueShare}}</td>
+                        <td>{{assetItem.numberShare}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        </br>
+
+        <div class="row row-content">
+            <div class="col-xs-12">
+                 <h2 class="titleLiabilities">Liabilities</h2>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="table-responsive size-table">
+                <table class=" table table-striped">
+                    <tr>
+                        <th class="th">Name</th>
+                        <th class="th">Bank</th>
+                        <th class="th">Investment value</th>
+                        <th class="th">Acquisition date</th>
+                        <th class="th">Expiration date</th>
+                        <th class="th">Monthly payment</th>
+                        <th class="th">Interests</th>
+                    </tr>
+
+                    <tr ng-repeat="liabilitiesItem in liabilitiesListData">
+                        <td>{{liabilitiesItem.name}}</td>
+                        <td>{{liabilitiesItem.bank}}</td>
+                        <td>{{liabilitiesItem.value}}</td>
+                        <td>{{liabilitiesItem.acquisitionDate}}</td>
+                        <td>{{liabilitiesItem.expirationDate}}</td>
+                        <td>{{liabilitiesItem.monthlyPayment}}</td>
+                        <td>{{liabilitiesItem.interests}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+
+
+
+    </form>
+</div>

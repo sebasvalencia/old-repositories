@@ -1,0 +1,55 @@
+<div class="container" ng-controller="ContactusCtrl" ng-init=init()>
+
+    <form name="formContactus" class="" novalidate="">
+
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <h3>Contact Us</h3>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-8 form-group">
+                <label for="firstname" class="control-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name" ng-model="contactus.firstName"
+                    required>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-8 form-group">
+                <label for="lastname" class="control-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" ng-model="contactus.lastName"
+                    required>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-8 form-group">
+                <label for="telnum" class="control-label">Contact Tel.</label>
+                <input type="text" class="form-control" id="telnum" name="telnum" placeholder="Tel. number" ng-model="contactus.telnumber">
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-8 form-group">
+                <label for="email" class="control-label">Email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email" ng-model="contactus.email">
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class=" col-sm-8 form-group">
+                <label for="comments" class="control-label">Your Comments</label>
+                <textarea class="form-control" rows="4" placeholder="Your Comments" ng-model="contactus.comments"></textarea>
+
+            </div>
+        </div>
+
+        <div class="form-group button-control-contactus">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-click="saveFeedback(contactus)">Send Feedback</button>
+            </div>
+        </div>
+    </form>
+</div>
