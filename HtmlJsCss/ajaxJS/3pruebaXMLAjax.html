@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XML Ajax</title>
+</head>
+<body>
+    <h1>Ejemplo XML de AJAX</h1>
+
+    <table id="tabla"></table>
+    <button type="button" onclick="cargarXml()">Traer información XML</button>
+    
+    <script>
+        function cargarXml() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    imprimirTabla(this);
+                }
+            };
+            xhttp.open("GET", "datos.xml", true);
+            xhttp.send();
+        }
+
+        function imprimirTabla(xhttp) {
+            var i;
+            var datosXML = xhttp.responseXML;
+            var tabla = "<tr><th>Artista</th><th>Titiel</th></tr>";
+            var x = datosXML.getElementsByTagName("CD");
+
+            for( i = 0; i < x.length; i++){
+                tabla += "<tr><td>" +
+                x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+            document.getElementById("tabla").innerHTML = tabla;
+
+        }
+    </script>
+
+</body>
+</html>

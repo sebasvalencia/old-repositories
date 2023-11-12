@@ -1,0 +1,16 @@
+{
+  "name": "pruebagrunt",
+  "version": "1.0.0",
+  "description": "Prueba de grunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sebastian Valencia N",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^3.1.0"
+  }
+}

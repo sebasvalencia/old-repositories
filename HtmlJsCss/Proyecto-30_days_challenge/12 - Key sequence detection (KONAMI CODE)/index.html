@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Detection</title>
+</head>
+<body>
+    <script>
+        const pressed = [];
+        const secretCode = 'wesbos';
+        window.addEventListener('keyup', (e) => {
+            console.log(e.key);
+            pressed.push(e.key);
+            
+            //de atras hacia adelante
+            //Solo deja los ultimos 6 elementos del arreglo
+            pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+            if(pressed.join('').includes(secretCode)){
+                console.log("DING DING!");
+                cornify_add();//Crea un unicornio y un arcoiris !!!
+            }
+            console.log(pressed);
+        });
+    </script>
+</body>
+</html>

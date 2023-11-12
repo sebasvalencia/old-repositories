@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX y Archivo</title>
+</head>
+<body>
+    <div id="showCD"></div><br>
+        <input type="button" onclick="anterior()" value="<<">
+        <input type="button" onclick="siguiente()" value=">>">
+    
+    <script>
+        var i = 0;
+        mostrarDato(i);
+
+        function mostrarDato(i) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    miFuncion(this,i);
+                }
+            };
+            xhttp.open("GET", "datos.xml", true);
+            xhttp.send();
+        }
+
+        function miFuncion(xml, i) {
+            var xmlDoc = xml.responseXML; 
+            x = xmlDoc.getElementsByTagName("CD");
+            document.getElementById("showCD").innerHTML =
+            "Artist: " +
+            x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+            "<br>Title: " +
+            x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+            "<br>Year: " + 
+            x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+        }
+
+        function anterior(){
+            if(i < x.length -1){
+                i++;
+                mostrarDato(i);
+            }
+        }
+
+        function siguiente() {
+            if(i > 0){
+                i--;
+                mostrarDato(i);
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

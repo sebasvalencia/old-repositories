@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX y PHP</title>
+</head>
+<body>
+    <h1>Escriba en el campo de texto</h1>
+    <form action="">
+        <label for="">Primer nombre</label>
+        <input type="text" id="texto" onkeyup="mostrarPista(this.value)" />
+    </form>
+    <p>Pista: <span id="textoSugerencia"></span></p>
+    <script>
+        function mostrarPista(cadena){
+            var xhttp = new XMLHttpRequest();
+
+            if(cadena.length == 0){
+                document.getElementById("textoSugerencia").innerHTML = "";
+                return;
+            }
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("textoSugerencia").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "servidor.php?valor="+cadena, true);
+            xhttp.send();
+
+
+        }
+    </script>
+</body>
+</html>

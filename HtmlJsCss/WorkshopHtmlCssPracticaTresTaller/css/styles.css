@@ -1,0 +1,82 @@
+.cf:before, .cf:after{
+    content: "";
+    display: table;
+}
+
+.cf:after{
+    clear: both;/*limpia en memoria */
+}
+
+.contenedor{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+ul{
+    list-style: none;
+}
+
+li{
+     float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+.banner{
+    position: relative;
+}
+
+.saludo{
+    position: absolute;
+    top: 50px;
+    right: 694px;
+    
+    
+    
+}
+
+.banner img{
+    width: 100%;
+}
+
+h1, h2{
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+
+p{
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+
+
+.galeria{
+    margin: 0 auto;
+    display: block;
+}
+
+
+.imagenes{
+    float: left;
+}
+
+
+
+table{
+    border: 2px solid #ccc; /* grosor tipo-linea(solid, dashed, doted) color*/
+    border-collapse: collapse;
+}
+
+table tr td{
+    border: 1px solid #666;
+    padding: 10px; /*los cuatro valores con el mismo valor*/
+    font-family: cursive;
+    font-size: 10px;
+}

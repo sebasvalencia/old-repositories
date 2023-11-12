@@ -1,0 +1,14 @@
+[
+    {
+        "input":"less/estilos.less",
+        "output":"../estilos.css",
+        "compress":"true"
+    }
+    /* lo concatena
+    ,{
+        "input":"otrosArchivos.less",
+        "output":"../estilos.css",
+        "compress":"true"
+    }
+    */
+]

@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/practica.css">
+    </head>
+    <title>Capacitacion</title>
+    <body>
+        <h1>Titulo principal</h1>
+        <h2>Titulo dos</h2>
+        <h3>Titulo tres</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam unde illo, accusantium esse vero quae, explicabo placeat eligendi, voluptatibus distinctio nisi. Nam quas, enim! Eum fuga error, ea odit eaque?</p>
+
+        <ul>
+            <li>items</li>
+            <li>items</li>
+            <li>items</li>
+            <li>items</li>
+        </ul>
+
+        <div class="contenedor-img">
+
+            <div class="img-prueba">
+                
+            </div>
+        </div>
+
+        <!-- usar target para abrir otra ventana -->
+        <a href="http://www.google.com.co" target="_blank">Google</a>
+        <a href="mailto:sebastian.valencia@ceiba.com.co">Correo</a>
+
+
+        <!-- 
+        Son etiquetas de acesibilidad
+        El alt muestra el texto cuando la imagen no carga
+        El title muestra un titulo cuando paso el mouse over
+        -->
+        <img src="../images/frutas.jpg" alt="frutas" title="haz clic aqui">
+
+
+        <!-- tr para crear fila
+        td para crear cada columna
+        -->
+
+        <table class="tbl-clase">
+            <tr>
+                <td rowspan="2">titulos</td>
+                <td colspan="2">titulos</td>
+                <td>titulos</td>
+                <td>titulos</td>                  
+                <!-- <td>titulos</td> -->
+            </tr>
+            <tr>
+                <!-- <td>datos 2</td> -->
+                <td>datos 2</td>
+                <td>datos 2</td>
+                <td>datos 2</td>
+                <td>datos 2</td>
+            </tr>
+        </table>
+
+        <!--
+        rowspan indica el numero de filas q ocupa la celda
+        colspan el numero de columnas que ocupara la celda
+        -->
+
+        <!--
+        Tablas avanzadas
+        -->
+
+        <table class="tbl-clase">
+            <thead>
+                <tr>
+                    <td colspan="4">Titulo tabla</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                </tr>
+                <tr>
+                    <td>Dato 3</td>
+                    <td>Dato 4</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">mail</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <form action="">
+            <label for="">Nombre</label>
+            <input type="text">
+
+            <label for="">Apellido</label>
+            <input type="text">
+
+            <label for="">Ciudad</label>
+            <select name="" id="">
+                <option value="">Medellin</option>
+                <option value="">Cartagena</option>
+            </select>              
+
+            <label for="">Descripción</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,60 @@
+
+
+
+/*cleafix cf*/
+
+
+.cf:before, .cf:after{
+    content: "";
+    display: table;
+}
+
+.cf:after{
+    clear: both;/*limpia en memoria */
+}
+
+
+
+.cajas{
+    border: 2px solid green;
+    position: relative;
+    background-color: pink;
+}
+
+
+.azul{
+    background: #0851b4;
+    width: 300px;
+    height: 150px;
+    /* position: absolute; */
+    float: left;
+}
+
+.verde{
+    background: #039d21;
+    width: 300px;
+    height: 150px;
+    /*position: absolute;/*mover la caja a la derecha*/
+    /*right: 0;
+    left: 0; /*lo sube a la derecha*/
+    float:left;
+}
+
+.amarillo{
+    background: #f0cc03;
+    width: 300px;
+    height: 150px;
+    float: left;
+}
+
+/*Estilos google font*/
+
+p{
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+}
+
+
+
+
+

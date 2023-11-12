@@ -1,0 +1,49 @@
+p{
+    color: red;
+    text-align: center;
+}
+
+#pId{
+    color:  blue;
+}
+
+.pClass{
+    color: green;
+}
+
+.fondoParrafo{
+    background-color: tomato;
+}
+
+.colorTexto{
+    color: dodgerblue;
+}
+
+.colorBorde{
+    border: 2px solid violet;
+}
+
+.fondoImagenSeRepite{
+    background-image: url('imagen_css.png');
+    background-repeat: repeat-x;
+    height: 100px;
+}
+
+.fondoImagenNoSeRepite{
+    background-image: url('imagen_css.png');
+    background-repeat: no-repeat;
+    height: 100px;
+}
+
+.fondoImagenNoSeRepiteSeMueveElFondo{
+    background-image: url('imagen_css.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    height: 100px;
+}
+
+
+
+
+
+

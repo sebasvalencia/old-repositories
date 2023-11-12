@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Understanding JavaScript's Capture</title>
+</head>
+
+<body class="bod">
+
+    <div class="one">
+        <div class="two">
+            <div class="three"></div>
+        </div>
+    </div>
+
+    <button>Click Me!</button>
+
+    <script>
+        const divs = document.querySelectorAll('div');
+        const button = document.querySelector('button');
+
+        function logText(e) {
+            console.log(this.classList.value);
+            //e.stopPropagation(); // stop bubbling!
+            console.log(this);
+        }
+
+        document.body.addEventListener('click', logText, {
+            capture: false,
+            once: true, //solo se ejecuta una vez el evento, no vuelve a ejecutarse si se da click
+        });//three two one bod
+
+        divs.forEach(div => div.addEventListener('click', logText));
+
+        //Solo se ejecuta una vez, in store checkout
+        button.addEventListener('click', () => {
+            console.log('Click!!!');
+        },{
+            once: true
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

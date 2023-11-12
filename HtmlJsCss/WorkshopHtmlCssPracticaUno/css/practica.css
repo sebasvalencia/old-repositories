@@ -1,0 +1,167 @@
+/*
+    las unidades de medida son usadas
+    pixeles relativas , mas precisa 
+    el porcentaje es relativo al elemento contenedor
+
+    etiqueta -> h1, p , ...
+    id -> con el #
+    class -> con el . 
+
+    
+    estilos a texto:
+    color
+    font-family
+    font-weight
+    font-size
+
+    familias tipograficas amplia:
+    arial -> italica, arial-narrow
+
+*/
+
+h1{
+    color: #0000ff;
+    font-family: arial;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+a{
+    color: green;
+    font-size: 18px;
+    font-family: arial;
+    font-weight: bold;
+    /*siempre sale el underline*/
+    text-decoration: none;/*quitarle underline*/
+    
+}
+
+/*Estados cuando ocurra el paso del mouse por el link*/
+a:hover, a:focus{
+    color: 000;
+    outline: 0; /*desaparece la linea del focus*/
+}
+
+ul{
+    list-style: none;
+    padding-left: 0; /*quita el espacio del contenedor */
+    margin: 0;
+}
+
+/*
+    Padding: contenedor hacia adrento
+    El padding va en las sentido de las manesillas del reloj
+        arriba derecho abajo izquierdo
+    Margin: del contenedor hacia afuera
+        arriba derecho abajo izquierdo
+*/
+
+/*
+    Llamado de imagenes desde el css
+    usar solo para los background 
+    background url posicion color no-repeat o repeat-x
+    
+*/
+
+/*.img-prueba{
+    background-image: url(../../images/paisaje.jpg);
+    height: 320px;   /*width: 500px;*/
+/* 
+    background-repeat: repeat-x;
+}
+*/
+
+.contenedor-img{
+    width: 100%;
+}
+
+.img-prueba{
+    background: url(../../images/paisaje.jpg) 0 0 #ccc no-repeat;
+    width: 500px;
+    height: 320px;
+}
+    
+
+/*
+    border-collapse: collapse; para quitar el doble linea
+*/
+
+table{
+    border: 2px solid #ccc; /* grosor tipo-linea(solid, dashed, doted) color*/
+    border-collapse: collapse;
+}
+
+.tbl-clase tr td{
+    border: 1px solid #666;
+    padding: 10px; /*los cuatro valores con el mismo valor*/
+    font-family: cursive;
+    font-size: 10px;
+}
+
+
+.tbl-clase thead{
+    background: #f0f020;
+}
+
+
+.tbl-clase thead td{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;  
+    font-family: arial;
+    
+}
+
+.tbl-clase tbody tr td{
+    font-family: cursive;
+    font-size: 14px;
+    color: green;
+}
+
+.tbl-clase tfoot tr td{
+color: #4a4a4a4;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    background-color: antiquewhite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
