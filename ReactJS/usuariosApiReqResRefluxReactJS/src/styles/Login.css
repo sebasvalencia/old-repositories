@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+.Login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.Login-box{
+  width: 400px;
+  height: 350px;
+  background-color: #607d8b;
+  border-radius: 6px;
+  flex-direction: column; /* los pone en columnas*/
+}
+
+.Login, .Login-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;/*centra en la mitad de la pantalla*/
+}
+
+.Login-box-formbox{
+  display: flex;
+  flex-direction: column;/* label debajo del input*/
+}
+
+
+.Login-box-username, .Login-box-password{
+  font-size: 1.2em;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+}
+
+
+.Login-submit{
+  display: block;
+  margin: 12px auto;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.8em;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+}
+
+.Login-username-input, .Login-username-password{
+  font-family: 'Inconsolata', monospace;
+  width: 250px;
+  border-radius: 2px;
+  padding: 5px 4px 5px 4px;
+}

@@ -1,0 +1,191 @@
+Instalar express y hola mundo::
+en la terminal escribimos npm init
+enter en todos los campos y completamos los campos autor y licencia MIT
+genera un archivo package.json con la información suministrada
+
+Crear el archivo .gitignore y escribir:
+# dependencies
+/node_modules
+
+Ahora instalar express nos facilita el desarrollo para el http
+npm install express --save
+
+Creamos el archivo index.js
+es el punto de entrada de la aplicacion,
+importamos express y creamos un servidor
+para correrlo en consola node index.js
+
+Instalando body-parser y nodemon::
+npm i -S body-parser
+Permite q cuando hagamos peticiones rest
+pueda parsear el cuerpo de la peticion podamos recoger los datos
+para por ejemplo ingresarlos a una bd
+Funciona como middleware
+
+importamos el bodyParser
+y permitimos q express lo use
+Porbamos
+
+instalalos nodemon para que no tengamos q reiniciar el servidor
+manualmente
+npm i -D nodemon // se instala en devDependencies del package.json
+
+para usarlos en script del package.json
+colocar :
+"start": "nodemon index.js",
+
+y en la consola npm start
+
+Cómo crear un endpoint con GET y parámetros en tu API REST::
+q escuche el api rest la ruta en concreto
+
+
+app.get('/hola/:name', (req, res) => {
+    res.send({mensaje: `Hola  ${req.params.name}`  });
+});
+
+los parametros se ven con el objecto req (request)
+
+//usando RES
+app.get('/hola', (req, res) => {
+    res.send({mensaje:"Hola Mundo"});
+});
+
+//Usando REQ
+app.get('/hola/:name', (req, res) => {
+    res.send({mensaje: `Hola  ${req.params.name}`  });
+});
+
+Metodos HTTP y codigos de respuesta utilizados en la API REST::
+
+para q el api sea restfull
+get
+post
+delete
+put
+
+GET
+pedimos datos al servidor
+pedimos la url
+GET url y el servidor responde con los datos q necesite
+
+POST
+enviamos datos al servidor
+los datos viajan en el cuerpo del mensaje
+en el servidor accedemos al cuerpo de la peticion
+
+DELETE
+una peticion para borrar un recurso
+
+PUT
+hacer una actualizacion de un recurso
+
+Los codigos de respuesta son los q devuelve el servidor
+1xx informativas
+2xx ok
+3xx Redireccion
+4xx error causado por el cliente
+5xx error causado por el servidor
+
+Las peticiones tienen un header (POST,PUT)
+cache, autorizado, navegador
+
+Cómo usar POSTMAN para testear tu API REST::
+Instalar psotman q es un plugin de chrome
+Seleccionar POST
+colocar la ruta:http://localhost:3001/api/product
+seleccionar los params:
+  name: 'Mac',
+  prrice: '200',
+  photo: 'mack.png',
+  category: 'laptop'
+Mirar la respuesta
+{ name: 'Mac',
+  prrice: '200',
+  photo: 'mack.png',
+  category: 'laptop' }
+
+
+Cómo instalar MongoDB y utilizar Mongoose como ORM/ODM::
+descargar e instalar mongodb
+npm i -S mongoose
+Antes crear dos carpetas: D:\data\db
+arrancar mongo en consola escribe mongod
+en otra terminal ecribir mongo y ya estariamos en la shell
+
+Necesitamos un driver par esto usamos mongoose
+lo importamos const mongoose = require('mongoose');
+//Primero conectamos la bd
+//el primer parametro es la bd mongodb://localhost:27017/nombre_bd
+//segundo parametro callback
+mongoose.connect('mongodb://localhost:27017/shop', (err, res)=>{
+  if(err){
+    //throw err;
+    return console.log(`Error al conectar a la BD ${err}`);
+  }else{
+    console.log("Conexion a la BD establecida...");
+    app.listen(port, () => {
+      console.log(`API REST corriendo en http:localhost:${port}`);
+    });
+  }
+});
+
+
+Cómo almacenar datos en MongoDB con HTTP POST en tu API::
+Crear modelo product
+se hace con schema
+
+Creamos una carpeta modelos que tendra el schema de product
+product.js
+
+luego lo importamos en el index.js y en el metodo post
+le seteamos los valores que vienen en el req.body.parametro
+usamos el metodo save que tiene dos parametros un error y un callback
+
+Como devolver datos con GET desde un API REST::
+let productId = req.params.productId;
+Product.findById(productId, (err, product) => {
+    if(err) return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
+    if(!product) return res.status(400).send({message: `El producto no existe`});
+
+    res.status(200).send({product}); //cuando product: product se puede escribir solo product
+
+Todo
+    Product.find({}, (err, poducts) => {
+      if(err) return res.status(500).send({message: `Error al realizar la peticion: ${err}`});
+      if(!products) return res.status(404).send({message: `No existen productos`});
+      res.send(200, {products});
+    });
+
+Como implmentar DELETE y UPDATE de registros en la API REST::
+DELETE
+let productId = req.params.productId;
+
+Product.findById(productId, (err, product) => {
+  if(err) res.status(500).send({message: `Error al borrar el producto: ${err}`});
+
+  product.remove(err => {
+      if(err) res.status(500).send({message: `Error al borrar el producto: ${err}`});
+      res.status(200).send({message:`El producto ha sido eliminado`});
+  });
+});
+
+UPDATE
+let productId = req.params.productId;
+let update = req.body;
+console.log("update: ", update);
+//primer param el id, segundo param un objecto con los campos a actualizar
+Product.findByIdAndUpdate(productId, update, (err, productUpdated) =>{
+  if(err) res.status(500).send({message: `Error al actualizar el producto: ${err}`});
+
+  res.status(200).send({product: productUpdated});
+
+REFACTORIZACION::
+separamos en diferentes carpetas
+index.js -> Pedir la informacion, se conecta a la BD y pone a escuchar nuestro servidor de express usa config.js
+config.js -> Tiene un objecto js que tiene datos del puerto y servidor de bd
+app.js -> tiene la configuracion de express usamos el modulo api que esta en Routes/index.js
+routers/index.js -> Tenemos las rutas y usamos un router de express usamos controllers/product.js
+controllers/product.js -> Los controladores que son las funciones que se comunican con node y la BD llaman a el modelo
+del producto models/product.js
+models/product.js -> tiene la definicion del modelo

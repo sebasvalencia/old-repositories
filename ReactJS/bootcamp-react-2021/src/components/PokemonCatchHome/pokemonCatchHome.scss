@@ -1,0 +1,37 @@
+.pokemon-home-catch-container {
+  display: grid;
+  grid-template-columns: 0.2fr 2.6fr 0.3fr;
+  grid-template-rows: 0.2fr 4fr;
+  grid-template-areas:
+    "filter search home"
+    "catchBody catchBody catchBody";
+}
+
+.pokemon-home-catch-order {
+  grid-area: filter;
+}
+
+.pokemon-home-return-home-button {
+  grid-area: home;
+}
+
+.pokemon-home-return-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.pokemon-home-image {
+  width: 50px;
+  height: 50px;
+}
+
+.pokemon-catch-search {
+  grid-area: search;
+}
+
+.pokemon-home-catch-lists {
+  grid-area: catchBody;
+}

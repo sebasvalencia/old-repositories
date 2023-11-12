@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+}
+
+.user-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-form input {
+  width: 33.33%;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+
+}
+
+.user-form input:focus{
+  outline: 0;
+  background: #fef2de;
+}
+
+.user-form button{
+  width: 100px;
+  border: 1;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 10px;
+}
+
+

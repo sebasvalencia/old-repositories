@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+.Card{
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.Card-img{
+  border-radius: 50px;
+  width: 125px;
+  height: auto;
+}
+
+
+.Card-text{
+  font-family: 'Encode Sans Condensed', sans-serif;
+  margin-right: 2px;
+}
